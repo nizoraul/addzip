@@ -79,7 +79,4 @@ test:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
 production:
-  <<: *default
-  database: addzip_production
-  username: addzip
-  password: <%= ENV['ADDZIP_DATABASE_PASSWORD'] %>
+  url: <%= ENV['DATABASE_URL'] %>
