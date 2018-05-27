@@ -1,0 +1,39 @@
+<h1>秋田の郵便番号検索</h1>
+
+<%= search_form_for @q do |f| %>
+
+  <%= f.label "市区町村" %>
+  <%= f.search_field :city_cont %>
+
+  <%= f.label "町域" %>
+  <%= f.search_field :town_cont %>
+
+  <%= f.submit %>
+<% end %>
+
+<table>
+  <thead>
+    <tr>
+      <th>郵便番号</th>
+      <th>都道府県</th>
+      <th>市区町村</th>
+      <th>町域</th>
+      <th>字丁目</th>
+    </tr>
+  </thead>
+  <tbody>
+    <%- @zip_codes.each do |zip_code| %>
+      <tr>
+        <td><%= zip_code.zip_code %></td>
+        <td><%= zip_code.prefecture %></td>
+        <td><%= zip_code.city %></td>
+        <td><%= zip_code.town %></td>
+        <td><%= zip_code.section %></td>
+        <td><%= zip_code.supplement %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+
