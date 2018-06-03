@@ -6,39 +6,37 @@
 .row
   = search_form_for @q do |f|
     .input-field.col.s12
-      = f.search_field :city_cont
-      label(for="q_city_cont") 市区町村
+      = f.search_field :city_cont, placeholder: "市区町村"
     .input-field.col.s12
-      = f.search_field :town_cont
-      label(for="q_town_cont") 町域
+      = f.search_field :town_cont, placeholder: "町域"
     .input-field.col.s12
-      button.btn(type="submit") 検索
+      button.btn.btn-large(type="submit") 検索
 .row
   .col.s12
     table.highlight
       thead
         tr
           th
-            | 郵便番号
+            h3 郵便番号
           th
-            | 都道府県
+            h3 都道府県
           th
-            | 市区町村
+            h3 市区町村
           th
-            | 町域
+            h3 町域
           th
-            | 字丁目
+            h3 字丁目
       tbody
         - @zip_codes.each do |zip_code|
           tr
             td
-              = zip_code.zip_code
+              h3= zip_code.zip_code
             td
-              = zip_code.prefecture
+              h3= zip_code.prefecture
             td
-              = zip_code.city
+              h3= zip_code.city
             td
-              = zip_code.town
+              h3= zip_code.town
             td
-              = zip_code.section
+              h3= zip_code.section
 
