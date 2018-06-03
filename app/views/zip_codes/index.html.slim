@@ -5,10 +5,10 @@
   h1 秋田の郵便番号検索
 .row
   = search_form_for @q do |f|
-    .input-field.col.s6
+    .input-field.col.s12.m6.l6
       = f.search_field :city_cont
       label(for="q_city_cont") 市区町村
-    .input-field.col.s6
+    .input-field.col.s12.m6.l6
       = f.search_field :town_cont
       label(for="q_town_cont") 町域
     .input-field.col.s6
