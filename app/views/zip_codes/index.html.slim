@@ -1,0 +1,46 @@
+.row
+  .col.s12
+    = image_tag 'namahage.jpg'
+.row
+  h1 秋田の郵便番号検索
+.row
+  = search_form_for @q do |f|
+    .input-field.col.s6
+      = f.search_field :city_cont
+      label(for="q_city_cont") 市区町村
+    .input-field.col.s6
+      = f.search_field :town_cont
+      label(for="q_town_cont") 町域
+    .input-field.col.s6
+      button.btn(type="submit") 検索
+.row
+  .col.s12
+    table.highlight
+      thead
+        tr
+          th
+            | 郵便番号
+          th
+            | 都道府県
+          th
+            | 市区町村
+          th
+            | 町域
+          th
+            | 字丁目
+      tbody
+        - @zip_codes.each do |zip_code|
+          tr
+            td
+              = zip_code.zip_code
+            td
+              = zip_code.prefecture
+            td
+              = zip_code.city
+            td
+              = zip_code.town
+            td
+              = zip_code.section
+            td
+              = zip_code.supplement
+

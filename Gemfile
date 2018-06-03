@@ -57,3 +57,9 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # 検索
 gem 'ransack'
+
+# css framework
+gem 'materialize-sass', '~> 1.0.0.rc1'
+
+# html markup
+gem 'slim-rails'
